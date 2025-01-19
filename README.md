@@ -5,7 +5,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 
 ## Table of contents
 * [Installation and Setup](#installation-and-setup)
-* [API Endpoints](#api-endpoints)
+* [API Endpoints](#api-endpoints-(with-details-to-each-endpoint))
 * [Security](#security)
 * [Contact](#contact)
   
@@ -66,7 +66,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 
 #### `POST /users/signup`
 - Expected Body (JSON)
-  ```
+  ```json
   {
     "email": "example@emial.com",
     "password": "123abc"

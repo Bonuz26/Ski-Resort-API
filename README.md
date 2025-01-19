@@ -143,6 +143,9 @@ Optimizes and helps manage equipment, customer data and rentals.
     "pricePerDay": "price_per_day"
   }
   ```
+> [!NOTE]
+> `pricePerDay` must be set in `Number` format.
+  
 - Expected response
   ```json
   {

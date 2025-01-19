@@ -43,7 +43,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 * [Equipment](#equipment)
     * [Get all equipment](#get-equipment)
     * [Add new equipment](#post-equipment)
-    * [Get specific equipment](#get-equipment:id)
+    * [Get specific equipment](#get-equipmentid)
     * [Update equipment](#put-equipment:id)
     * [Delete equipment](#delete-equipment:id)
 * [Clients](#clients)
@@ -69,7 +69,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 - Expected body (JSON)
   ```json
   {
-    "email": "example@emial.com",
+    "email": "example@email.com",
     "password": "123abc"
   }
   ```
@@ -188,7 +188,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 - Expected response
   ```json
   {
-    message: "Removed equipment number <id>"
+    "message": "Removed equipment number <id>"
   }
   ```
 ### Clients

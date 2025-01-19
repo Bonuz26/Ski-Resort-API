@@ -5,13 +5,14 @@ Optimizes and helps manage equipment, customer data and rentals.
 
 ## Table of contents
 * [Installation and Setup](#installation-and-setup)
-* [API Endpoints](#api-endpoints-(with-details-to-each-endpoint))
+* [API Endpoints](#api-endpoints-with-details-to-each-endpoint)
 * [Security](#security)
 * [Contact](#contact)
   
 ## Installation and Setup
 ### 1. Clone the Repository
 - Download a full copy of the project to your local computer.
+  
   [https://github.com/your-username/ski-resort-management.git](https://github.com/your-username/ski-resort-management.git)
 
 ### 2. Install libraries
@@ -65,11 +66,17 @@ Optimizes and helps manage equipment, customer data and rentals.
 | POST   | /users/login     | Login to existing user            |
 
 #### `POST /users/signup`
-- Expected Body (JSON)
+- Expected body (JSON)
   ```json
   {
     "email": "example@emial.com",
     "password": "123abc"
+  }
+  ```
+- Expected response
+  ```json
+  {
+    
   }
   ```
 

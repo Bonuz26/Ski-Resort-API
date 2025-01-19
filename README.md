@@ -87,7 +87,7 @@ Optimizes and helps manage equipment, customer data and rentals.
     "password": "123abc"
   }
   ```
-- Expected response
+- Expected response (JWT token)
   ```json
   {
     "message": "token"

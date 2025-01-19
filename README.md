@@ -44,20 +44,20 @@ Optimizes and helps manage equipment, customer data and rentals.
     * [Get all equipment](#get-equipment)
     * [Add new equipment](#post-equipment)
     * [Get specific equipment](#get-equipmentid)
-    * [Update equipment](#put-equipment:id)
-    * [Delete equipment](#delete-equipment:id)
+    * [Update equipment](#put-equipmentid)
+    * [Delete equipment](#delete-equipmentid)
 * [Clients](#clients)
     * [Get all clients](#get-clients)
     * [Add new client](#post-clients)
-    * [Get specific client](#get-clients:id)
-    * [Update client](#put-clients:id)
-    * [Delete client](#delete-clients:id)
+    * [Get specific client](#get-clientsid)
+    * [Update client](#put-clientsid)
+    * [Delete client](#delete-clientsid)
 * [Rentals](#rentals)
     * [Get all rentals](#get-rentals)
     * [Add new rent](#post-rentals)
-    * [Get specific rent](#get-rentals:id)
-    * [Update rent](#put-rentals:id)
-    * [Delete rent](#delete-rentals:id)
+    * [Get specific rent](#get-rentalsid)
+    * [Update rent](#put-rentalsid)
+    * [Delete rent](#delete-rentalsid)
 
 ### Registration and login
 | Method | Endpoint         | Description                       |
@@ -154,7 +154,7 @@ Optimizes and helps manage equipment, customer data and rentals.
   }
   ```
 #### `GET /equipment/:id`
-- Expected body (JSON)
+- Expected response
   ```json
   {
     "message": "Details of equipment number <id>",
@@ -200,6 +200,94 @@ Optimizes and helps manage equipment, customer data and rentals.
 | PUT    | /clients/:id   | Update client details          |
 | DELETE | /clients/:id   | Delete client                  |
 
+#### `GET /clients`
+
+- Expected response
+  ```json
+  {
+    "message": "List of all clients:",
+    "list": [
+        {
+          "firstName": "first_name_1,
+          "lastName": "last_name_1",
+          "phoneNumber": "phone_number_1",
+          "address": "address",
+          "email": "email_1"
+        },
+        {
+          "firstName": "first_name_2,
+          "lastName": "last_name_2",
+          "phoneNumber": "phone_number_2",
+          "address": "address",
+          "email": "email_2"
+        }
+    ]
+  }
+  ```
+#### `POST /clients`
+- Expected body (JSON)
+  ```json
+  {
+    "firstName": "first_name,
+    "lastName": "last_name",
+    "phoneNumber": "phone_number",
+    "address": "address",
+    "email": "email"
+  }
+  ```
+- Expected response
+  ```json
+  {
+    "message": "Successfully added new client!",
+    "data": {
+        "_id": "id",
+        "firstName": "first_name",
+        "lastName": "last_name",
+        "phoneNumber": "phone_number",
+        "address": "address",
+        "email": "email"
+    }
+  }
+  ```
+#### `GET /clients/:id`
+- Expected response
+  ```json
+  {
+    "message": "Detalis about client number <id>",
+    "data": {
+        "_id": "id",
+        "firstName": "first_name",
+        "lastName": "last_name",
+        "phoneNumber": "phone_number",
+        "address": "address",
+        "email": "email"
+    }
+  }
+  ```
+#### `PUT /clients/:id`
+- Expected body (JSON)
+  ```json
+  {
+    "firstName": "first_name,
+    "lastName": "last_name",
+    "phoneNumber": "phone_number",
+    "address": "address",
+    "email": "email"
+  }
+  ```
+- Expected response
+  ```json
+  {
+    "message": "Successfully saved changes for client number <id>"
+  }
+  ```
+#### `DELETE /clients/:id`
+- Expected response
+  ```json
+  {
+    "message": "Removed client number <id>"
+  }
+  ```
 ### Rentals
 | Method | Endpoint       | Description                    |
 |--------|----------------|--------------------------------|

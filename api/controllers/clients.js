@@ -26,7 +26,7 @@ exports.clients_add_new = (req, res, next) => {
     .then(result => {
         res.status(201).json({
             message: "Successfully added new client!",
-            dane: result
+            data: result
         })
     })
     .catch(err => res.status(500).json({message: err}))
@@ -38,7 +38,7 @@ exports.clients_get_by_id = (req, res, next) => {
     then(result => {
         res.status(200).json({
         message: "Detalis about client number " + id,
-        dane: result})
+        data: result})
     })
 }
 

@@ -103,6 +103,9 @@ Optimizes and helps manage equipment, customer data and rentals.
 | PUT    | /equipment/:id   | Update equipment details          |
 | DELETE | /equipment/:id   | Delete equipment                  |
 
+> [!IMPORTANT]
+> You need to set your token in authorization: Bearer <token>.
+
 #### `GET /equipment`
 
 - Expected response
@@ -199,6 +202,9 @@ Optimizes and helps manage equipment, customer data and rentals.
 | GET    | /clients/:id   | Get details of chosen client   |
 | PUT    | /clients/:id   | Update client details          |
 | DELETE | /clients/:id   | Delete client                  |
+
+> [!IMPORTANT]
+> You need to set your token in authorization: Bearer <token>.
 
 #### `GET /clients`
 
@@ -299,6 +305,9 @@ Optimizes and helps manage equipment, customer data and rentals.
 | PUT    | /rentals/:id   | Update rent details            |
 | DELETE | /rentals/:id   | Delete rent                    |
 
+> [!IMPORTANT]
+> You need to set your token in authorization: Bearer <token>.
+
 #### `GET /rentals`
 
 - Expected response
@@ -350,6 +359,9 @@ Optimizes and helps manage equipment, customer data and rentals.
     "status": "status"
   }
   ```
+> [!NOTE]
+> `startDay` and `endDay` must be in following format *2024-01-01T00:00:00.000Z*.
+  
 - Expected response
   ```json
   {

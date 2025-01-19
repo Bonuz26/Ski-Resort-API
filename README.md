@@ -104,7 +104,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 | DELETE | /equipment/:id   | Delete equipment                  |
 
 > [!IMPORTANT]
-> You need to set your token in authorization: Bearer <token>.
+> You need to set your token in authorization: Bearer token.
 
 #### `GET /equipment`
 
@@ -204,7 +204,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 | DELETE | /clients/:id   | Delete client                  |
 
 > [!IMPORTANT]
-> You need to set your token in authorization: Bearer <token>.
+> You need to set your token in authorization: Bearer token.
 
 #### `GET /clients`
 
@@ -306,7 +306,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 | DELETE | /rentals/:id   | Delete rent                    |
 
 > [!IMPORTANT]
-> You need to set your token in authorization: Bearer <token>.
+> You need to set your token in authorization: Bearer token.
 
 #### `GET /rentals`
 
@@ -360,7 +360,7 @@ Optimizes and helps manage equipment, customer data and rentals.
   }
   ```
 > [!NOTE]
-> `startDay` and `endDay` must be in following format *2024-01-01T00:00:00.000Z*.
+> `startDay` and `endDay` must be in following format *YYYY-MM-DDT00:00:00.000Z*.
   
 - Expected response
   ```json

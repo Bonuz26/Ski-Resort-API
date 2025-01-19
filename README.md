@@ -105,7 +105,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 
 #### `GET /equipment`
 
-  - Expected response
+- Expected response
   ```json
   {
     "message": "List of all equipment:",
@@ -116,7 +116,7 @@ Optimizes and helps manage equipment, customer data and rentals.
             "type": "type",
             "size": "size",
             "status": "status",
-            "pricePerDay": price_per_day
+            "pricePerDay": "price_per_day"
         },
         {
             "_id": "equipment_2_id",
@@ -124,13 +124,13 @@ Optimizes and helps manage equipment, customer data and rentals.
             "type": "type",
             "size": "size",
             "status": "stuts",
-            "pricePerDay": price_per_day
+            "pricePerDay": "price_per_day"
         }
     ]
-}
-```
+  }
+  ```
 #### `POST /equipment`
-  - Expected body (JSON)
+- Expected body (JSON)
   ```json
   {
     "name": "equipment_name",
@@ -143,11 +143,18 @@ Optimizes and helps manage equipment, customer data and rentals.
 - Expected response
   ```json
   {
-    "message": "Successfully added new equipment!"
+    "message": "Successfully added new equipment!",
+    "data": {
+        "_id": "id",
+        "name": "equipment_name",
+        "type": "type",
+        "status": "status",
+        "pricePerDay": "price_per_day"
+    }
   }
   ```
-  #### `GET /equipment/:id`
-  - Expected body (JSON)
+#### `GET /equipment/:id`
+- Expected body (JSON)
   ```json
   {
     "message": "Details of equipment number <id>",
@@ -156,36 +163,32 @@ Optimizes and helps manage equipment, customer data and rentals.
         "name": "equipment_name",
         "type": "type",
         "status": "status",
-        "pricePerDay": price_per_day
+        "pricePerDay": "price_per_day"
     }
   }
   ```
-  #### `PUT /equipment/:id`
-  - Expected body (JSON)
+#### `PUT /equipment/:id`
+- Expected body (JSON)
   ```json
   {
-    
+    "name": "equipment_name",
+    "type": "type",
+    "size": "size",
+    "status": "stauts",
+    "pricePerDay": "price_per_day"
   }
   ```
 - Expected response
   ```json
   {
-    
-    
+    "message": "Successfully saved changes for equipment number <id>"
   }
   ```
-  #### `DELETE /equipment/:id`
-  - Expected body (JSON)
-  ```json
-  {
-    
-  }
-  ```
+#### `DELETE /equipment/:id`
 - Expected response
   ```json
   {
-    
-    
+    message: "Removed equipment number <id>"
   }
   ```
 ### Clients

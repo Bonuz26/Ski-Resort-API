@@ -208,14 +208,16 @@ Optimizes and helps manage equipment, customer data and rentals.
     "message": "List of all clients:",
     "list": [
         {
-          "firstName": "first_name_1,
+          "_id": "client_1_id",
+          "firstName": "first_name_1",
           "lastName": "last_name_1",
           "phoneNumber": "phone_number_1",
           "address": "address",
           "email": "email_1"
         },
         {
-          "firstName": "first_name_2,
+          "_id": "client_2_id",
+          "firstName": "first_name_2",
           "lastName": "last_name_2",
           "phoneNumber": "phone_number_2",
           "address": "address",
@@ -228,7 +230,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 - Expected body (JSON)
   ```json
   {
-    "firstName": "first_name,
+    "firstName": "first_name",
     "lastName": "last_name",
     "phoneNumber": "phone_number",
     "address": "address",
@@ -268,7 +270,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 - Expected body (JSON)
   ```json
   {
-    "firstName": "first_name,
+    "firstName": "first_name",
     "lastName": "last_name",
     "phoneNumber": "phone_number",
     "address": "address",
@@ -296,3 +298,107 @@ Optimizes and helps manage equipment, customer data and rentals.
 | GET    | /rentals/:id   | Get details of specific rent   |
 | PUT    | /rentals/:id   | Update rent details            |
 | DELETE | /rentals/:id   | Delete rent                    |
+
+#### `GET /rentals`
+
+- Expected response
+  ```json
+  {
+    "message": "List of all existing rentals:",
+    "list": [
+        {
+            "_id": "rent_1_id",
+            "equipmentId": {
+                "_id": "id",
+                "name": "equipment_name",
+                "pricePerDay": "price_per_day"
+            },
+            "clientId": {
+                "_id": "id",
+                "lastName": "last_name"
+            },
+            "startDay": "start_day",
+            "endDay": "end_day",
+            "status": "status"
+        },
+        {
+            "_id": "rent_2_id",
+            "equipmentId": {
+                "_id": "id",
+                "name": "equipment_name",
+                "pricePerDay": "price_per_day"
+            },
+            "clientId": {
+                "_id": "id",
+                "lastName": "last_name"
+            },
+            "startDay": "start_day",
+            "endDay": "end_day",
+            "status": "status"
+        },
+    ]
+  }
+  ```
+#### `POST /rentals`
+- Expected body (JSON)
+  ```json
+  {
+    "equipmentId": "equipment_id",
+    "clientId": "client_id",
+    "startDay": "date",
+    "endDay": "date",
+    "status": "status"
+  }
+  ```
+- Expected response
+  ```json
+  {
+    "message": "Successfully added new rent!",
+    "data": {
+        "equipmentId": "equipment_id",
+        "clientId": "client_id",
+        "startDay": "date",
+        "endDay": "date",
+        "status": "status"
+    }
+  }
+  ```
+#### `GET /rentals/:id`
+- Expected response
+  ```json
+  {
+    "message": "Detalis about client number <id>",
+    "data": {
+        "_id": "id",
+        "firstName": "first_name",
+        "lastName": "last_name",
+        "phoneNumber": "phone_number",
+        "address": "address",
+        "email": "email"
+    }
+  }
+  ```
+#### `PUT /rentals/:id`
+- Expected body (JSON)
+  ```json
+  {
+    "equipmentId": "equipment_id",
+    "clientId": "client_id",
+    "startDay": "date",
+    "endDay": "date",
+    "status": "status"
+  }
+  ```
+- Expected response
+  ```json
+  {
+    "message": "Successfully saved changes for rent number <id>"
+  }
+  ```
+#### `DELETE /rentals/:id`
+- Expected response
+  ```json
+  {
+    "message": "Removed rent number <id>"
+  }
+  ```

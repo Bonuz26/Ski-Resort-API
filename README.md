@@ -418,9 +418,9 @@ Optimizes and helps manage equipment, customer data and rentals.
   }
   ```
 ## Security
-- Most endpoints require authentication using a JWT token.
-- Secrets are stored in a .env file.
-- The JWT token is obtained after logging in (POST /users/login).
+- Most endpoints require authentication using a <ins>JWT token</ins>.
+- Secrets are stored in a `.env` file.
+- The JWT token is obtained after logging in `(POST /users/login)`.
 
 ## Contact
 If you have any questions, suggestions, or issues regarding this project, feel free to reach out to me:

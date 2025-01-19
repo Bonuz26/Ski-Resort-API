@@ -37,26 +37,26 @@ Optimizes and helps manage equipment, customer data and rentals.
 
 ## API Endpoints (with details to each endpoint)
 * [Authentication](#registration-and-login)
-    * [Registration](#post-/users/signup)
+    * [Registration](#post-userssignup)
     * [Login](#login) 
 * [Equipment](#equipment)
-    * [Get all equipment](#get-/equipment)
-    * [Add new equipment](#post-/equipment)
-    * [Get specific equipment](#get-/equipment/:id)
-    * [Update equipment](#put-/equipment/:id)
-    * [Delete equipment](#delete-/equipment/:id)
+    * [Get all equipment](#get-equipment)
+    * [Add new equipment](#post-equipment)
+    * [Get specific equipment](#get-equipment:id)
+    * [Update equipment](#put-equipment:id)
+    * [Delete equipment](#delete-equipment:id)
 * [Clients](#clients)
-    * [Get all clients](#get-/clients)
-    * [Add new client](#post-/clients)
-    * [Get specific client](#get-/clients/:id)
-    * [Update client](#put-/clients/:id)
-    * [Delete client](#delete-/clients/:id)
+    * [Get all clients](#get-clients)
+    * [Add new client](#post-clients)
+    * [Get specific client](#get-clients:id)
+    * [Update client](#put-clients:id)
+    * [Delete client](#delete-clients:id)
 * [Rentals](#rentals)
-    * [Get all rentals](#get-/rentals)
-    * [Add new rent](#post-/rentals)
-    * [Get specific rent](#get-/rentals/:id)
-    * [Update rent](#put-/rentals/:id)
-    * [Delete rent](#delete-/rentals/:id)
+    * [Get all rentals](#get-rentals)
+    * [Add new rent](#post-rentals)
+    * [Get specific rent](#get-rentals:id)
+    * [Update rent](#put-rentals:id)
+    * [Delete rent](#delete-rentals:id)
 
 ### Registration and login
 | Method | Endpoint         | Description                       |
@@ -65,7 +65,13 @@ Optimizes and helps manage equipment, customer data and rentals.
 | POST   | /users/login     | Login to existing user            |
 
 #### `POST /users/signup`
-
+- Expected Body (JSON)
+  ```
+  {
+    "email": "example@emial.com",
+    "password": "123abc"
+  }
+  ```
 
 ### Equipment
 | Method | Endpoint         | Description                       |

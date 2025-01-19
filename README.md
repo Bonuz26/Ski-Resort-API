@@ -1,18 +1,25 @@
 # **Ski Resort API** ⛷️❄️
+
 REST API designed to manage a ski resort - <ins>**Node.js**</ins>, <ins>**Express.js**</ins> and <ins>**MongoDB**</ins> (via Mongoose).
 Optimizes and helps manage equipment, customer data and rentals.
 
+## Table of contents
+* [Installation and Setup](#installation-and-setup)
+* [API Endpoints](#api-endpoints)
+* [Security](#security)
+* [Contact](#contact)
+  
 ## Installation and Setup
-### 1. Clone the Repository:
+### 1. Clone the Repository
 - Download a full copy of the project to your local computer.
-  [GitHub Pages](https://github.com/your-username/ski-resort-management.git)
+  [https://github.com/your-username/ski-resort-management.git](https://github.com/your-username/ski-resort-management.git)
 
-### 2. Install libraries:
-- Install all required libraries for the project.
+### 2. Install libraries
+- Install all required libraries for the project:
   ```
   npm install
   ```
-### 3. Configure Environment Variables:
+### 3. Configure Environment Variables
 - Create a `.env` file in the root directory with the following variables:
   ```
   DB_USER="<YOUR_MONGODB_USERNAME>"
@@ -20,22 +27,47 @@ Optimizes and helps manage equipment, customer data and rentals.
   DB_NAME="<YOUR_DATABASE_NAME>"
   JWT_KEY="<YOUR_JWT_KEY>"
   ```
-### 4. Run the server:
--
+### 4. Run the server
+- Start the server with this command:
   ```
   nodemon server.js
   ```
 > [!NOTE]
 > The API will run on http://localhost:3000 by default. You can change port number in `server.js` file.
-## API Endpoints
 
-### - Register and login
+## API Endpoints (with details to each endpoint)
+* [Authentication](#registration-and-login)
+    * [Registration](#post-/users/signup)
+    * [Login](#login) 
+* [Equipment](#equipment)
+    * [Get all equipment](#get-/equipment)
+    * [Add new equipment](#post-/equipment)
+    * [Get specific equipment](#get-/equipment/:id)
+    * [Update equipment](#put-/equipment/:id)
+    * [Delete equipment](#delete-/equipment/:id)
+* [Clients](#clients)
+    * [Get all clients](#get-/clients)
+    * [Add new client](#post-/clients)
+    * [Get specific client](#get-/clients/:id)
+    * [Update client](#put-/clients/:id)
+    * [Delete client](#delete-/clients/:id)
+* [Rentals](#rentals)
+    * [Get all rentals](#get-/rentals)
+    * [Add new rent](#post-/rentals)
+    * [Get specific rent](#get-/rentals/:id)
+    * [Update rent](#put-/rentals/:id)
+    * [Delete rent](#delete-/rentals/:id)
+
+### Registration and login
 | Method | Endpoint         | Description                       |
 |--------|------------------|-----------------------------------|
 | POST   | /users/signup    | Register new user                 |
 | POST   | /users/login     | Login to existing user            |
 
-### - Equipment
+#### `POST /users/signup`
+
+
+### Equipment
 | Method | Endpoint         | Description                       |
 |--------|------------------|-----------------------------------|
 | GET    | /equipment       | Get all equipment                 |
@@ -44,7 +76,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 | PUT    | /equipment/:id   | Update equipment details          |
 | DELETE | /equipment/:id   | Delete equipment                  |
 
-### - Clients
+### Clients
 | Method | Endpoint       | Description                    |
 |--------|----------------|--------------------------------|
 | GET    | /clients       | Get all clients                |
@@ -53,7 +85,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 | PUT    | /clients/:id   | Update client details          |
 | DELETE | /clients/:id   | Delete client                  |
 
-### - Rentals
+### Rentals
 | Method | Endpoint       | Description                    |
 |--------|----------------|--------------------------------|
 | GET    | /rentals       | Get all rentals                |

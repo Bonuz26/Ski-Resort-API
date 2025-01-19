@@ -39,7 +39,7 @@ Optimizes and helps manage equipment, customer data and rentals.
 ## API Endpoints (with details to each endpoint)
 * [Authentication](#registration-and-login)
     * [Registration](#post-userssignup)
-    * [Login](#login) 
+    * [Login](#post-userslogin) 
 * [Equipment](#equipment)
     * [Get all equipment](#get-equipment)
     * [Add new equipment](#post-equipment)
@@ -76,10 +76,24 @@ Optimizes and helps manage equipment, customer data and rentals.
 - Expected response
   ```json
   {
-    
+    "message": "User successfully added"
   }
   ```
-
+#### `POST /users/login`
+- Expected body (JSON)
+  ```json
+  {
+    "email": "example@email.com",
+    "password": "123abc"
+  }
+  ```
+- Expected response
+  ```json
+  {
+    "message": "token"
+  }
+  ```
+  
 ### Equipment
 | Method | Endpoint         | Description                       |
 |--------|------------------|-----------------------------------|
@@ -89,6 +103,91 @@ Optimizes and helps manage equipment, customer data and rentals.
 | PUT    | /equipment/:id   | Update equipment details          |
 | DELETE | /equipment/:id   | Delete equipment                  |
 
+#### `GET /equipment`
+
+  - Expected response
+  ```json
+  {
+    "message": "List of all equipment:",
+    "list": [
+        {
+            "_id": "equipment_1_id",
+            "name": "equipment_1_name",
+            "type": "type",
+            "size": "size",
+            "status": "status",
+            "pricePerDay": price_per_day
+        },
+        {
+            "_id": "equipment_2_id",
+            "name": "equipment_2_name",
+            "type": "type",
+            "size": "size",
+            "status": "stuts",
+            "pricePerDay": price_per_day
+        }
+    ]
+}
+```
+#### `POST /equipment`
+  - Expected body (JSON)
+  ```json
+  {
+    "name": "equipment_name",
+    "type": "type",
+    "size": "size",
+    "status": "stauts",
+    "pricePerDay": "price_per_day"
+  }
+  ```
+- Expected response
+  ```json
+  {
+    "message": "Successfully added new equipment!"
+  }
+  ```
+  #### `GET /equipment/:id`
+  - Expected body (JSON)
+  ```json
+  {
+    "message": "Details of equipment number <id>",
+    "data": {
+        "_id": "id",
+        "name": "equipment_name",
+        "type": "type",
+        "status": "status",
+        "pricePerDay": price_per_day
+    }
+  }
+  ```
+  #### `PUT /equipment/:id`
+  - Expected body (JSON)
+  ```json
+  {
+    
+  }
+  ```
+- Expected response
+  ```json
+  {
+    
+    
+  }
+  ```
+  #### `DELETE /equipment/:id`
+  - Expected body (JSON)
+  ```json
+  {
+    
+  }
+  ```
+- Expected response
+  ```json
+  {
+    
+    
+  }
+  ```
 ### Clients
 | Method | Endpoint       | Description                    |
 |--------|----------------|--------------------------------|
